@@ -4,7 +4,7 @@ Next, define it like line 5
 */
 const _ = require('lodash');
 
-const items = [1, [2, [3]]]
+const items = [1, [2, [7]]]
 const newItems = _.flattenDeep(items);
 
 console.log(newItems);

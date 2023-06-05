@@ -26,3 +26,12 @@ npm install lodash --save
 Use of .gitIgnore
 
 Push to github
+
+npm i nodemon --save-dev
+Run file as soon as you save the change (in project.json)
+"scripts": {
+   "dev": "nodemon app.js"
+  },
+
+Uninstall package
+npm uninstall loadash
