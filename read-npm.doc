@@ -1,0 +1,28 @@
+Video 29
+
+npm --version
+
+npm i <packageName>
+Installs npm locally
+
+npm i -g <packageName>
+Installs npm globally
+
+sudo npm install -g <packageName> (FOR MAC)
+Installs npm globally
+
+package.js
+Its a manifest file, which stores details about npm of our project
+
+npm init (step by step)
+npm init -y (everything default)
+
+npm i loadash 
+This command installs lodash. 
+Lodash has no use in our project. Installed just to show how it can be installed.
+Simply using "npm install lodash", like in video 28, gave error "lodash not found". Hence, use command to install Lodash
+npm install lodash --save 
+
+Use of .gitIgnore
+
+Push to github

@@ -1,0 +1,31 @@
+BUILT IN MODULES (8-13.js)
+OS
+PATH
+FS
+HTTP
+
+OS (8-modules.js):
+os.userInfo()
+os.upTime()
+os.type()
+os.release()
+os.totalmem()
+os.freemem()
+
+PATH (9-modules-Path.js):
+path.sep
+path.basename
+path.join
+
+FS:
+Synchronous approach
+readFileSync
+writeFileSync
+Asynchronous approach
+readFile
+writeFile
+
+HTTP:
+Setup webserver 
+createServer
+server.listen(portNumber)
