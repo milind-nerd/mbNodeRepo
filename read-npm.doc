@@ -32,6 +32,13 @@ Run file as soon as you save the change (in project.json)
 "scripts": {
    "dev": "nodemon app.js"
   },
+!! NODEMON is used when you want to run terminal, as soon as you save app.js !!
+(video 32)
 
 Uninstall package
 npm uninstall loadash
+
+Package.json -> Why we need this?
+There are dependencies. So suppose I want to setup a project in same way as another developer. At that time, I use same version like that person.
+Otherwise, app may work in one version, and not on another.
+

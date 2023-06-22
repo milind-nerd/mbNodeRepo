@@ -1,0 +1,84 @@
+Video 35-
+
+Event loop is what allows node.js to peform non-blocking I/O operations - despite the fact that JS is single-threaded.
+
+----X----X----
+In below code, 
+    console.log("Hello");
+
+    setTimeout(() => {
+        console.log("Second Task")
+    }, 30000);
+
+    console.log("Bye");
+    //output:
+    Hello
+    Bye
+    Second Task
+
+So we tell JS to wait for setTimeOut function, so that like 13 dont have to wait until setTimeOut function is executed. This is what event loop does.
+----X----X----X----X----X----X----X----X----X----X--------X----X----X----X----X--------X----X----X----X----X--------X----X----X----X----X----
+
+----X----X----X
+PROMISES for async calls
+Promise is a placeholder for a value that will be available in future. 
+Promise DOES NOT guarentee a value, but atleast it provides reason why that value does not exist (typically, an error).
+
+3 states of Promise:
+1) PENDING: intial states
+2) FULFILLED: successfully completed
+3) REJECTED: operation failed
+.then - Promise resolved; recieves resolved value
+.catch - Promise rejected; recieves reason for rejection
+
+        https://www.digitalocean.com/community/tutorials/understanding-javascript-promises
+        var isMomHappy = true;
+
+        // Promise
+        var willIGetNewPhone = new Promise(
+            function (resolve, reject) {
+                if (isMomHappy) {
+                    var phone = {
+                        brand: 'Samsung',
+                        color: 'black'
+                    };
+                    resolve(phone); // fulfilled
+                    console.log(phone);
+                } else {
+                    var reason = new Error('mom is not happy');
+                    reject(reason); // reject
+                }
+
+            }
+        );
+
+        // call our promise
+        var askMom = function () {
+            willIGetNewPhone
+                .then(function (fulfilled) {
+                    // yay, you got a new phone
+                    console.log(fulfilled);
+                    // output: { brand: 'Samsung', color: 'black' }
+                })
+                .catch(function (error) {
+                    // oops, mom didn't buy it
+                    console.log(error.message);
+                    // output: 'mom is not happy'
+                });
+        };
+
+        askMom();
+
+Q: What is the syntax difference between Promise and Async Await?
+A: The promise involves chaining .then and .catch methods, whereas Async Await uses a try-catch block that looks more like synchronous code.
+
+
+
+
+
+
+
+
+
+
+

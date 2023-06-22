@@ -1,16 +1,39 @@
-/* how can you access external modules? 
-First step, install them (see read-npm.doc)
-Next, define it like line 5
-*/
-const _ = require('lodash');
- 
-const items = [1, [2, [7]]]
-const newItems = _.flattenDeep(items);
+// ES5: Part 1
 
-console.log(newItems);
+var isMomHappy = true;
 
-/* 
-IMP:
-Simply using "npm install lodash", like in video 28, gave error "lodash not found".
-Hence, use command npm install lodash --save to install Lodash
-*/ 
+// Promise
+var willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            var phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone); // fulfilled
+            console.log(phone);
+        } else {
+            var reason = new Error('mom is not happy');
+            reject(reason); // reject
+        }
+
+    }
+);
+
+// call our promise
+var askMom = function () {
+    willIGetNewPhone
+        .then(function (fulfilleds) {
+            // yay, you got a new phone
+            console.log(fulfilleds);
+             // output: { brand: 'Samsung', color: 'black' }
+        })
+        .catch(function (error) {
+            // oops, mom didn't buy it
+            console.log(error.message);
+             // output: 'mom is not happy'
+        });
+};
+
+askMom();
+
