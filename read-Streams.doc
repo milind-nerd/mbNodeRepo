@@ -1,0 +1,24 @@
+// video 46-50 
+// 19-Streams.js + 20-Streams-Chunked.js
+
+                                Writable
+                                Readable
+                                Duplex
+                                Transform
+
+Streams Read file:
+If you see FS-Sync.js file, it has below code:
+const first = readFileSync('./content/first.txt','utf-8');
+
+But if your first.txt file has too much data in it, it will show you error "variable cannot hold this big data." What to do?
+==> USE STREAMS
+
+1) stream.on - to read data in chunks (by default 64kb)
+YOU CAN CHANGE THIS 64kb, using highWaterMark
+
+2) highWaterMark: 90000
+
+
+3) fileStream.pipe => using this, not only you can read data in chunks, you can also write data in chunks.
+After using this, in network tab, you will see Transfer-Encoding:chunked
+

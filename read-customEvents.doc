@@ -1,0 +1,6 @@
+Video 43 // 18-customEvent...js
+
+Custom events has 2 objects:
+1) ON: listen for spefic events
+2) EMIT: emit that event
+
