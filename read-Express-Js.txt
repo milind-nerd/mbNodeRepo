@@ -1,0 +1,6 @@
+HTTP methods:
+
+read
+write
+update
+delete

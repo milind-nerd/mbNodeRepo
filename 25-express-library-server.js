@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+
+// You dont have to write code for logo.css and styles. Just using below line, they are accessible
 app.use(express.static('./public'));
 
 app.get('/',(req,res) => {
